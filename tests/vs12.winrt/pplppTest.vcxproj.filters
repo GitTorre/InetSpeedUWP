@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>0af209cf-24d2-4e23-9bfa-1cd48be7b4bd</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>3530eadc-e919-4bc2-aca9-b13869393214</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>74555969-0901-4064-86e3-2cfb8b2fad4c</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Package">
+      <UniqueIdentifier>65c9664a-24c5-4daa-8d02-1ea8a36845ab</UniqueIdentifier>
+      <Extensions>appxmanifest;tile;settings</Extensions>
+    </Filter>
+    <Filter Include="Header Files\include">
+      <UniqueIdentifier>{811fad51-8781-4f7b-b8e2-bdc9e32f9453}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\impl">
+      <UniqueIdentifier>{955b0d9c-87f1-4b13-8a7b-d6025531230e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\impl\pplppimplshare.h">
+      <Filter>Header Files\include\impl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\impl\pplppimplvs12.h">
+      <Filter>Header Files\include\impl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\impl\ppltimer.h">
+      <Filter>Header Files\include\impl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\impl\pplxtimer.h">
+      <Filter>Header Files\include\impl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\impl\winrtcontexcallback.h">
+      <Filter>Header Files\include\impl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pplxpp.h">
+      <Filter>Header Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pplpp.h">
+      <Filter>Header Files\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pplppTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Images\UnitTestLogo.scale-100.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Images\UnitTestSmallLogo.scale-100.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Images\UnitTestSplashScreen.scale-100.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Images\UnitTestStoreLogo.scale-100.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <Filter>Package</Filter>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pplppTest_TemporaryKey.pfx" />
+  </ItemGroup>
+</Project>
