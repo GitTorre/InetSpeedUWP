@@ -31,50 +31,13 @@ void MainPage::SpeedButton_Click(Platform::Object^ sender, Windows::UI::Xaml::Ro
 {
 	if (InternetConnectionState::Connected)
 	{
-		//auto connectionSpeed = InternetConnectionState::GetInternetConnectionSpeed();
-
 		auto connectionSpeedWithHost = InternetConnectionState::GetInternetConnectionSpeedWithHostName(ref new Windows::Networking::HostName("pinterest.com"));
-
 		auto _speed = create_task(connectionSpeedWithHost);
 
 		_speed.then([this](ConnectionSpeed speed)
 		{
-			__speed = speed;
-
 			if (speed == ConnectionSpeed::Unknown) return;
-
-			TextBoxResults->Text += "__speed" + " " + __speed.ToString() + "\n";
-			//"RawSpeed value: " + InternetConnectionState::RawSpeed + "\n";
-
-			if (speed == ConnectionSpeed::High)
-			{
-				//This is a highspeed, low latency Internet connection...
-			}
-			else if (speed == ConnectionSpeed::Average)
-			{
-				//This is the most common connection speed across Cellular and Wifi. Thus, Average (average speed, average latency)...
-			}
-			else if (speed == ConnectionSpeed::Low)
-			{
-				//This is a low speed, high latency connection...
-			}
 			TextBoxResults->Text += speed.ToString() + "\n";
-
-			switch (speed)
-			{
-			case ConnectionSpeed::Unknown:
-				TextBoxResults->Text += "case: Unknown" + "\n";
-				break;
-			case ConnectionSpeed::High:
-				TextBoxResults->Text += "case: High" + "\n";
-				break;
-			case ConnectionSpeed::Average:
-				TextBoxResults->Text += "case: Average" + "\n";
-				break;
-			case ConnectionSpeed::Low:
-				TextBoxResults->Text += "case: Low" + "\n";
-				break;
-			}
 		});
 	}
 	else
