@@ -11,7 +11,7 @@
 
 #include "App.xaml.h"
 #include "MainPage.xaml.h"
-
+#include "XamlBindingInfo.g.hpp"
 #include "App.g.hpp"
 #include "MainPage.g.hpp"
 

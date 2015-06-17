@@ -12,34 +12,42 @@ extern "C" __declspec(dllimport) int __stdcall IsDebuggerPresent();
 
 #include "MainPage.xaml.h"
 
-
 void ::SpeedTestUAPCpp::MainPage::InitializeComponent()
 {
     if (_contentLoaded)
+    {
         return;
-
+    }
     _contentLoaded = true;
-
     ::Windows::Foundation::Uri^ resourceLocator = ref new ::Windows::Foundation::Uri(L"ms-appx:///MainPage.xaml");
     ::Windows::UI::Xaml::Application::LoadComponent(this, resourceLocator, ::Windows::UI::Xaml::Controls::Primitives::ComponentResourceLocation::Application);
 }
-
-
 
 void ::SpeedTestUAPCpp::MainPage::Connect(int __connectionId, ::Platform::Object^ __target)
 {
     switch (__connectionId)
     {
-    case 1:
-        this->SpeedButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-        (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->SpeedButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::SpeedTestUAPCpp::MainPage::*)
-                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&MainPage::SpeedButton_Click);
-        break;
-    case 2:
-        this->TextBoxResults = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
-        break;
+        case 1:
+            {
+                this->SpeedButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->SpeedButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::SpeedTestUAPCpp::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&MainPage::SpeedButton_Click);
+            }
+            break;
+        case 2:
+            {
+                this->TextBoxResults = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+            }
+            break;
     }
     _contentLoaded = true;
+}
+
+::Windows::UI::Xaml::Markup::IComponentConnector^ ::SpeedTestUAPCpp::MainPage::GetBindingConnector(int __connectionId, ::Platform::Object^ __target)
+{
+    __connectionId;         // unreferenced
+    __target;               // unreferenced
+    return nullptr;
 }
 
 

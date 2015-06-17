@@ -26,7 +26,7 @@ namespace InetSpeedUAP
 		static IAsyncOperation<ConnectionSpeed>^ InternetConnectionState::GetInternetConnectionSpeed();
 		static IAsyncOperation<ConnectionSpeed>^ InternetConnectionState::GetInternetConnectionSpeedWithHostName(HostName^ hostName);
 		static property bool InternetConnectionState::Connected { bool get(); }
-		//static property double InternetConnectionState::RawSpeed;
+		static property double InternetConnectionState::RawSpeed;
 	};
 }
 

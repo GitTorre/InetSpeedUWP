@@ -37,7 +37,7 @@ void MainPage::SpeedButton_Click(Platform::Object^ sender, Windows::UI::Xaml::Ro
 		_speed.then([this](ConnectionSpeed speed)
 		{
 			if (speed == ConnectionSpeed::Unknown) return;
-			TextBoxResults->Text += speed.ToString() + "\n";
+			TextBoxResults->Text += speed.ToString() + "\n" + "Raw Speed: " + InternetConnectionState::RawSpeed + "\n";
 		});
 	}
 	else

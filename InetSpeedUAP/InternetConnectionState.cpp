@@ -43,23 +43,19 @@ ConnectionSpeed InternetConnectionState::GetConnectionSpeed(double roundtriptime
 {
 	if (!(roundtriptime > 0.0))
 	{
-		//RawSpeed = roundtriptime;
 		return ConnectionSpeed::Unknown;
 	}
 
-	if (roundtriptime <= 0.0013)
+	if (roundtriptime <= 0.0014)
 	{
-		//RawSpeed = roundtriptime;
 		return ConnectionSpeed::High;
 	}
 
-	if (roundtriptime > 0.0013 && roundtriptime < 0.13)
+	if (roundtriptime > 0.0014 && roundtriptime < 0.14)
 	{
-		//RawSpeed = roundtriptime;
 		return ConnectionSpeed::Average;
 	}
 
-	//RawSpeed = roundtriptime;
 	return ConnectionSpeed::Low;
 }
 
@@ -130,7 +126,9 @@ ConnectionSpeed InternetConnectionState::InternetConnectSocketAsync()
 	}
 	else
 	{
-		return GetConnectionSpeed(currentSpeed / retries);
+		double rawSpeed = currentSpeed / retries;
+		RawSpeed = rawSpeed;
+		return GetConnectionSpeed(rawSpeed);
 	}
 }
 

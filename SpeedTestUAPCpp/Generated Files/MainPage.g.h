@@ -6,6 +6,7 @@
 //     the code is regenerated.
 //------------------------------------------------------------------------------
 
+
 namespace Windows {
     namespace UI {
         namespace Xaml {
@@ -20,17 +21,19 @@ namespace Windows {
 namespace SpeedTestUAPCpp
 {
     partial ref class MainPage : public ::Windows::UI::Xaml::Controls::Page, 
-        public ::Windows::UI::Xaml::Markup::IComponentConnector
+        public ::Windows::UI::Xaml::Markup::IComponentConnector,
+        public ::Windows::UI::Xaml::Markup::IComponentConnector2
     {
     public:
         void InitializeComponent();
         virtual void Connect(int connectionId, ::Platform::Object^ target);
+        virtual ::Windows::UI::Xaml::Markup::IComponentConnector^ GetBindingConnector(int connectionId, ::Platform::Object^ target);
     
     private:
         bool _contentLoaded;
+    
         private: ::Windows::UI::Xaml::Controls::Button^ SpeedButton;
         private: ::Windows::UI::Xaml::Controls::TextBox^ TextBoxResults;
-    
     };
 }
 
