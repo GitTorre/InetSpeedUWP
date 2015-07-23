@@ -82,7 +82,7 @@ The JavaScript WinRT projection doesn't support C++ enum class named values. Ins
 
 The following makes the code easier to read -> apply named values (JS objects) to numbers (the speed result integer) received from the native API...
 
-   
+   ```JS
    var ConnectionSpeed = { High: 0, Average: 1, Low: 2, Unknown: 3 }; 
 
    function getConnectionSpeed() { 
@@ -105,7 +105,7 @@ The following makes the code easier to read -> apply named values (JS objects) t
        else { 
                  //Not connected... 
  } 
-
+```
 Example (C++/CX consumer): 
 
 	if (InternetConnectionState::Connected)
