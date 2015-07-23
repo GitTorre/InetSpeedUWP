@@ -96,6 +96,9 @@
   <PropertyGroup>
     <PackageCertificateKeyFile>UI_TemporaryKey.pfx</PackageCertificateKeyFile>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
@@ -179,7 +182,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\InetSpeedUAP\InetSpeedUAP.vcxproj">
+    <ProjectReference Include="..\InetSpeedUWP\InetSpeedUWP.vcxproj">
       <Project>{e3fe6878-ed7a-4244-b4b6-d096742e1a5b}</Project>
     </ProjectReference>
   </ItemGroup>
