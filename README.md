@@ -40,7 +40,7 @@ Low: Device is currently attached to a low-speed, high-latency Internet connecti
 ```
 ```JS
 Unknown: The current Internet connection speed can't be determined. Proceed with caution. This could mean that there is very high network latency, a problem with an upstream service, etc... 
-```JS
+```
 Example (C# consumer): 
 ```
 This example tests for a highspeed network based on a provided HostName (this is the best way to use this API given you really want to know the status of the Internet connection as it pertains to where you need to put/grab data over the network in real time...). Note you should always test for Unknown and then react accordingly (don't proceed with network work. Unknown means you are connected to the Internet, but you can't do network work with acceptable latency.) 
