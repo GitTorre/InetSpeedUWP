@@ -108,36 +108,18 @@ The following makes the code easier to read -> apply named values (JS objects) t
 
 Example (C++/CX consumer): 
 
-using namespace InetSpeedUWP;
+	if (InternetConnectionState::Connected)
+	{
+		auto connectionSpeedWithHost = InternetConnectionState::GetInternetConnectionSpeedWithHostName(ref new Windows::Networking::HostName("pinterest.com"));
+		auto _speed = create_task(connectionSpeedWithHost);
+		_speed.then([this](ConnectionSpeed speed)
+		{
+			if (speed == ConnectionSpeed::Unknown) return;
+			TextBoxResults->Text += speed.ToString() + "\n" + "Raw Speed: " + InternetConnectionState::RawSpeed + "\n";
+		});
+	}
+	else
+	{
+		TextBoxResults->Text = "Not connected...";
+	}
 
-...
-
-void MainPage::SpeedButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-{
-    if (InternetConnectionState::Connected) 
-    { 
-          auto connectionSpeed = InternetConnectionState::GetInternetConnectionSpeedWithHostName(ref new Windows::Networking::HostName("mytargethost.com")); 
-    
-          create_task(connectionSpeed).then([this](ConnectionSpeed speed) 
-          { 
-              if (speed == ConnectionSpeed::Unknown) return; 
-    
-              if (speed == ConnectionSpeed::High) 
-              { 
-                  //highspeed, low latency Internet connection... 
-              } 
-              else if (speed == ConnectionSpeed::Average) 
-              { 
-                  //This is the most common connection speed across Cellular and Wifi... 
-              } 
-              else if(speed == ConnectionSpeed::Low) 
-              { 
-                    //Low speed, high latency... 
-              } 
-        }); 
-    } 
-    else 
-    { 
-        //Not connected... 
-    } 
-}
