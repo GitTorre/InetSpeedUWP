@@ -182,9 +182,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\InetSpeedUWP\InetSpeedUWP.vcxproj">
-      <Project>{e3fe6878-ed7a-4244-b4b6-d096742e1a5b}</Project>
-    </ProjectReference>
+    <SDKReference Include="InetSpeedWinRT, Version=1.0" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
