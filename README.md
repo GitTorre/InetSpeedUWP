@@ -32,10 +32,13 @@ Speed test results are returned as an enum value (For JavaScript consumers, youâ
 ```JS
 High: Device is currently attached to a high-speed, low-latency Internet connection. 
 ```
+```JS
 Average: Device is currently attached to an average speed/latency Internet connection (LTE, 3G, etcâ€¦). 
+```
 ```JS
 Low: Device is currently attached to a low-speed, high-latency Internet connection. 
 ```
+```JS
 Unknown: The current Internet connection speed can't be determined. Proceed with caution. This could mean that there is very high network latency, a problem with an upstream service, etc... 
 ```JS
 Example (C# consumer): 
