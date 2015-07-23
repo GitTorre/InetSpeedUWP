@@ -8,7 +8,7 @@
 #include "MainPage.g.h"
 #include "ppl.h"
 
-using namespace InetSpeedUAP;
+using namespace InetSpeedUWP;
 using namespace Concurrency;
 
 namespace UI
