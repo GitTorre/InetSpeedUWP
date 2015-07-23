@@ -39,7 +39,7 @@ Average: Device is currently attached to an average speed/latency Internet conne
 Low: Device is currently attached to a low-speed, high-latency Internet connection. 
 ```
 ```JS
-Unknown: The current Internet connection speed can't be determined. Proceed with caution. This could mean that there is very high network latency, a problem with an upstream service, etc... 
+Unknown: The current Internet connection speed cannot be determined. Proceed carefully...
 ```
 Example (C# consumer): 
 ```
