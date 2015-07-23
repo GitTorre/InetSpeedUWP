@@ -110,29 +110,34 @@ Example (C++/CX consumer):
 
 using namespace InetSpeedUWP;
 
- if (InternetConnectionState::Connected) 
- { 
-       auto connectionSpeed = InternetConnectionState::GetInternetConnectionSpeedWithHostName(ref new Windows::Networking::HostName("mytargethost.com")); 
+...
 
-       create_task(connectionSpeed).then([this](ConnectionSpeed speed) 
-       { 
-           if (speed == ConnectionSpeed::Unknown) return; 
-
-           if (speed == ConnectionSpeed::High) 
-           { 
-               //highspeed, low latency Internet connection... 
-           } 
-           else if (speed == ConnectionSpeed::Average) 
-           { 
-               //This is the most common connection speed across Cellular and Wifi... 
-           } 
-           else if(speed == ConnectionSpeed::Low) 
-           { 
-                 //Low speed, high latency... 
-           } 
-     }); 
- } 
- else 
- { 
-     //Not connected... 
- } 
+void MainPage::SpeedButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+    if (InternetConnectionState::Connected) 
+    { 
+          auto connectionSpeed = InternetConnectionState::GetInternetConnectionSpeedWithHostName(ref new Windows::Networking::HostName("mytargethost.com")); 
+    
+          create_task(connectionSpeed).then([this](ConnectionSpeed speed) 
+          { 
+              if (speed == ConnectionSpeed::Unknown) return; 
+    
+              if (speed == ConnectionSpeed::High) 
+              { 
+                  //highspeed, low latency Internet connection... 
+              } 
+              else if (speed == ConnectionSpeed::Average) 
+              { 
+                  //This is the most common connection speed across Cellular and Wifi... 
+              } 
+              else if(speed == ConnectionSpeed::Low) 
+              { 
+                    //Low speed, high latency... 
+              } 
+        }); 
+    } 
+    else 
+    { 
+        //Not connected... 
+    } 
+}
