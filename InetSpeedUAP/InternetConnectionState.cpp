@@ -3,7 +3,7 @@
 #include "Enums.h"
 #include "pplpp.h"
 
-using namespace InetSpeedUAP;
+using namespace InetSpeedUWP;
 using namespace Windows::Networking;
 using namespace Windows::Networking::Connectivity;
 using namespace Windows::Networking::Sockets;

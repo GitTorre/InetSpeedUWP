@@ -1,5 +1,5 @@
 #pragma once
-namespace InetSpeedUAP
+namespace InetSpeedUWP
 {
 	public enum class ConnectionSpeed
 	{

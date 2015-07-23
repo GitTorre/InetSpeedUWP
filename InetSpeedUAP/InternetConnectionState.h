@@ -11,7 +11,7 @@ using namespace Windows::Networking;
 using namespace Windows::Networking::Connectivity;
 using namespace std;
 
-namespace InetSpeedUAP
+namespace InetSpeedUWP
 {
 	public ref class InternetConnectionState sealed
 	{

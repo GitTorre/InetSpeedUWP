@@ -29,7 +29,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{e3fe6878-ed7a-4244-b4b6-d096742e1a5b}</ProjectGuid>
     <Keyword>WindowsRuntimeComponent</Keyword>
-    <ProjectName>InetSpeedUAP</ProjectName>
+    <ProjectName>InetSpeedUWP</ProjectName>
     <RootNamespace>InetSpeedUAP</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
