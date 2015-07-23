@@ -42,7 +42,7 @@ Low: Device is currently attached to a low-speed, high-latency Internet connecti
 Unknown: The current Internet connection speed cannot be determined. Proceed carefully...
 ```
 Example (C# consumer): 
-```
+
 This example tests for a highspeed network based on a provided HostName (this is the best way to use this API given you really want to know the status of the Internet connection as it pertains to where you need to put/grab data over the network in real time...). Note you should always test for Unknown and then react accordingly (don't proceed with network work. Unknown means you are connected to the Internet, but you can't do network work with acceptable latency.) 
 
 High and Average are the two results you should test for before doing network work that involves either downloading or uploading data.
