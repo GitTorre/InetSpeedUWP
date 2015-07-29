@@ -16,6 +16,11 @@ static bool Connected
  ```
 Returns true if the current Internet connection for the device is active, else false. 
 
+```JS
+static double RawSpeed 
+ ```
+Raw computed speed, in seconds.
+ 
 Methods 
 ```JS
 static IAsyncOperation<ConnectionSpeed> GetInternetConnectionSpeed(); 
