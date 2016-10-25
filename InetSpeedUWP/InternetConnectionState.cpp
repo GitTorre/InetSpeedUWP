@@ -105,12 +105,12 @@ ConnectionSpeed InternetConnectionState::InternetConnectSocketAsync()
 				currentSpeed += _clientSocket->Information->RoundTripTimeStatistics.Min / 1000000.0;
 			}).get();
 		}
-		catch (Platform::COMException^ e)
+		catch (Platform::COMException^ e) //naughty, but sometimes this happens and should not crash this component...
 		{
 			currentSpeed = 0.0;
 			retries--;
 		}
-		catch (task_canceled&)
+		catch (task_canceled&) //task timeout exceeded, for example...
 		{
 			currentSpeed = 0.0;
 			retries--;
